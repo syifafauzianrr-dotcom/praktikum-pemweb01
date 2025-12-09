@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>To-Do List Modern</title>
+<style>
+    body {
+        font-family: Poppins, sans-serif;
+        background: #1e1e1e;
+        color: #fff;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        width: 350px;
+        background: #2a2a2a;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    h2 { text-align: center; margin-bottom: 15px; }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+        background: #3a3a3a;
+        color: #fff;
+    }
+
+    button {
+        width: 48%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        color: #fff;
+        transition: 0.2s;
+    }
+
+    #btnTambah { background: #4CAF50; }
+    #btnTambah:hover { background: #45a047; }
+
+    #btnHapus { background: #d9534f; }
+    #btnHapus:hover { background: #c9302c; }
+
+    ul { margin-top: 15px; padding-left: 20px; }
+    li { padding: 8px 0; border-bottom: 1px solid #444; }
+</style>
+</head>
+
+<body>
+<div class="card">
+  <h2>To-Do List</h2>
+
+  <input type="text" id="todoInput" placeholder="Masukkan tugas...">
+  <button id="btnTambah">Tambah</button>
+  <button id="btnHapus">Hapus Terakhir</button>
+
+  <ul id="todoList"></ul>
+</div>
+
+<script>
+const input = document.getElementById("todoInput");
+const list = document.getElementById("todoList");
+
+btnTambah.onclick = () => {
+  if (input.value.trim() === "") return;
+  const li = document.createElement("li");
+  li.textContent = input.value;
+  list.appendChild(li);
+  input.value = "";
+};
+
+btnHapus.onclick = () => {
+  if (list.lastElementChild) list.removeChild(list.lastElementChild);
+};
+</script>
+
+</body>
+</html>

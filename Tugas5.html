@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chaining Modern</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+    body {
+        background: #121212;
+        font-family: Poppins;
+        color: white;
+        padding: 40px;
+        text-align: center;
+    }
+
+    #notif {
+        width: 300px;
+        margin: 20px auto;
+        padding: 15px;
+        background: #2a2a2a;
+        border-left: 6px solid #4da3ff;
+        border-radius: 12px;
+        color: #fff;
+        text-align: center;
+        display: none;
+        box-shadow: 0 0 18px rgba(77,163,255,0.2);
+    }
+
+    button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        background: #4da3ff;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #1e90ff;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Notifikasi Chaining Modern</h2>
+
+<button id="showNotif">Tampilkan Notifikasi</button>
+
+<div id="notif">Ini adalah notifikasi keren!</div>
+
+<script>
+$("#showNotif").click(function () {
+  $("#notif")
+    .css("background", "#263238")
+    .fadeIn(500)
+    .slideDown(500)
+    .delay(3000)
+    .slideUp(500)
+    .fadeOut(500);
+});
+</script>
+
+</body>
+</html>

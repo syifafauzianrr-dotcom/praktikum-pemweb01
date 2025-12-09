@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slideshow Modern</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+    body {
+        background: #181818;
+        font-family: Poppins;
+        color: white;
+        text-align: center;
+        padding: 40px;
+    }
+
+    #slider {
+        width: 350px;
+        height: 230px;
+        margin: auto;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    #slider img {
+        width: 100%;
+        display: none;
+        border-radius: 15px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 15px 10px;
+        background: #4da3ff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        color: #fff;
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #1e90ff;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Slideshow Fade Modern</h2>
+
+<div id="slider">
+  <img src="https://picsum.photos/350/230?1">
+  <img src="https://picsum.photos/350/230?2">
+  <img src="https://picsum.photos/350/230?3">
+</div>
+
+<button id="prevBtn">Prev</button>
+<button id="nextBtn">Next</button>
+
+<script>
+let index = 0;
+const images = $("#slider img");
+
+images.eq(index).show();
+
+$("#nextBtn").click(function () {
+  images.eq(index).fadeOut(400);
+  index = (index + 1) % images.length;
+  images.eq(index).fadeIn(400);
+});
+
+$("#prevBtn").click(function () {
+  images.eq(index).fadeOut(400);
+  index = (index - 1 + images.length) % images.length;
+  images.eq(index).fadeIn(400);
+});
+</script>
+
+</body>
+</html>
