@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .faq-item { margin-bottom: 15px; cursor: pointer; }
+    .question { font-weight: bold; }
+    .answer { display: none; padding-left: 10px; }
+  </style>
+</head>
+
+<body>
+
+  <h2>FAQ Interaktif</h2>
+
+  <div class="faq-item">
+    <div class="question">Apa itu HTML?</div>
+    <div class="answer">HTML adalah bahasa markup untuk membuat halaman web.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Apa itu CSS?</div>
+    <div class="answer">CSS digunakan untuk memperindah tampilan web.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Apa itu JavaScript?</div>
+    <div class="answer">JavaScript membuat halaman web menjadi interaktif.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Apa itu jQuery?</div>
+    <div class="answer">jQuery adalah library JavaScript untuk memudahkan DOM manipulation.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Apa itu API?</div>
+    <div class="answer">API adalah antarmuka untuk menghubungkan aplikasi dengan data/software lain.</div>
+  </div>
+
+  <script>
+    $(".question").click(function () {
+      $(this).next(".answer").toggle();
+    });
+
+    $(".question").hover(
+      function () { $(this).css("color", "blue"); },
+      function () { $(this).css("color", "black"); }
+    );
+  </script>
+
+</body>
+</html>
